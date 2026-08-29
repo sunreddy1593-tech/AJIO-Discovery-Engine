@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "462570252",
+  "product_title": "Pack of 3 Men Cotton Solid Double Pouch Support Brief",
+  "url": "https://www.ajio.com/p/462570252",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T16:17:58.165Z",
+  "average_rating": null,
+  "rating_count": 82,
+  "rating_distribution": {
+    "1": 15,
+    "2": 8,
+    "3": 14,
+    "4": 20,
+    "5": 40
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 70,
+        "Loose": 6,
+        "Tight": 16,
+        "Too Loose": 3,
+        "Too Tight": 3
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 20,
+        "Very Good": 34,
+        "Average": 31,
+        "Bad": 8,
+        "Very Bad": 5
+      }
+    }
+  ]
+}

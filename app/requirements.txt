@@ -1,0 +1,12 @@
+# Evaluator Streamlit app. Install from the project root so src/ is importable:
+#   .venv\Scripts\python.exe -m pip install -r app/requirements.txt
+# Demo mode needs only streamlit + pandas. Live mode also needs the tagger stack.
+
+streamlit==1.62.0
+pandas==3.0.5
+groq==1.6.0
+pydantic==2.13.4
+pydantic-settings==2.15.0
+PyYAML==6.0.3
+python-dotenv==1.2.3
+tenacity==9.1.4

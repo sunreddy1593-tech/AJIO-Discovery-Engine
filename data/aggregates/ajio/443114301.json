@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "443114301",
+  "product_title": "Women Floral Print Regular Fit Top",
+  "url": "https://www.ajio.com/p/443114301",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T14:05:54.436Z",
+  "average_rating": null,
+  "rating_count": 208,
+  "rating_distribution": {
+    "1": 6,
+    "2": 5,
+    "3": 6,
+    "4": 24,
+    "5": 57
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 82,
+        "Loose": 13,
+        "Tight": 3,
+        "Too Loose": 0,
+        "Too Tight": 0
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 36,
+        "Very Good": 48,
+        "Average": 11,
+        "Bad": 0,
+        "Very Bad": 3
+      }
+    }
+  ]
+}

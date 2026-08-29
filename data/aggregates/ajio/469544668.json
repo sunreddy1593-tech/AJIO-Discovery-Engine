@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "469544668",
+  "product_title": "Slim Fit Polo T-Shirt with Logo Embroidery",
+  "url": "https://www.ajio.com/p/469544668",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T16:08:36.878Z",
+  "average_rating": null,
+  "rating_count": 493,
+  "rating_distribution": {
+    "1": 10,
+    "2": 3,
+    "3": 12,
+    "4": 22,
+    "5": 51
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 82,
+        "Loose": 8,
+        "Tight": 5,
+        "Too Loose": 3,
+        "Too Tight": 0
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 42,
+        "Very Good": 36,
+        "Average": 16,
+        "Bad": 2,
+        "Very Bad": 2
+      }
+    }
+  ]
+}

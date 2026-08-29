@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "703634316",
+  "product_title": "Men Embroidered Regular Fit Shirt",
+  "url": "https://www.ajio.com/p/703634316",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T15:59:23.737Z",
+  "average_rating": null,
+  "rating_count": 47,
+  "rating_distribution": {
+    "1": 38,
+    "2": 23,
+    "3": 8,
+    "4": 10,
+    "5": 19
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 71,
+        "Loose": 14,
+        "Tight": 14,
+        "Too Loose": 0,
+        "Too Tight": 0
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 36,
+        "Very Good": 9,
+        "Average": 27,
+        "Bad": 18,
+        "Very Bad": 9
+      }
+    }
+  ]
+}

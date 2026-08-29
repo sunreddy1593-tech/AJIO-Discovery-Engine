@@ -1,0 +1,29 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "703622385",
+  "product_title": "Women Embroidered 2-Piece Co-Ord Set",
+  "url": "https://www.ajio.com/p/703622385",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T14:03:36.666Z",
+  "average_rating": null,
+  "rating_count": null,
+  "rating_distribution": {
+    "1": 16,
+    "2": 5,
+    "3": 11,
+    "4": 19,
+    "5": 46
+  },
+  "opinions": [
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 30,
+        "Very Good": 36,
+        "Average": 18,
+        "Bad": 4,
+        "Very Bad": 9
+      }
+    }
+  ]
+}

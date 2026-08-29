@@ -1,0 +1,4 @@
+segment,blocker_type,n_docs,lift
+first_time_online_buyer,checkout_friction,1,26.666667
+first_time_online_buyer,price_absolute,1,9.090909
+first_time_online_buyer,delivery_uncertainty,1,6.451613

@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "460911112",
+  "product_title": "Belt with Buckle Closure",
+  "url": "https://www.ajio.com/p/460911112",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T16:19:13.760Z",
+  "average_rating": null,
+  "rating_count": 69,
+  "rating_distribution": {
+    "1": 30,
+    "2": 8,
+    "3": 17,
+    "4": 15,
+    "5": 27
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 62,
+        "Loose": 24,
+        "Tight": 6,
+        "Too Loose": 6,
+        "Too Tight": 0
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 22,
+        "Very Good": 22,
+        "Average": 25,
+        "Bad": 8,
+        "Very Bad": 22
+      }
+    }
+  ]
+}

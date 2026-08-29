@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "410533032",
+  "product_title": "Men Regular Fit Polo T-Shirt with Contrast Tipping",
+  "url": "https://www.ajio.com/p/410533032",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T16:11:00.335Z",
+  "average_rating": null,
+  "rating_count": 203,
+  "rating_distribution": {
+    "1": 17,
+    "2": 3,
+    "3": 8,
+    "4": 13,
+    "5": 56
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 64,
+        "Loose": 17,
+        "Tight": 0,
+        "Too Loose": 17,
+        "Too Tight": 0
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 46,
+        "Very Good": 23,
+        "Average": 14,
+        "Bad": 3,
+        "Very Bad": 12
+      }
+    }
+  ]
+}

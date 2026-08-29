@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "469815001",
+  "product_title": "Men P-6000 Sneakers",
+  "url": "https://www.ajio.com/p/469815001",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T16:21:54.323Z",
+  "average_rating": null,
+  "rating_count": 58,
+  "rating_distribution": {
+    "1": 10,
+    "2": 3,
+    "3": 5,
+    "4": 12,
+    "5": 68
+  },
+  "opinions": [
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 76,
+        "Very Good": 19,
+        "Average": 3,
+        "Bad": 0,
+        "Very Bad": 0
+      }
+    },
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 81,
+        "Tight": 13,
+        "Loose": 4,
+        "Too Loose": 0,
+        "Too Tight": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "700397380",
+  "product_title": "Women Washed Boyfriend High-Rise Clean Jeans",
+  "url": "https://www.ajio.com/p/700397380",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T15:29:12.443Z",
+  "average_rating": null,
+  "rating_count": null,
+  "rating_distribution": {
+    "1": 24,
+    "2": 8,
+    "3": 14,
+    "4": 20,
+    "5": 32
+  },
+  "opinions": [
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 22,
+        "Very Good": 33,
+        "Average": 21,
+        "Bad": 8,
+        "Very Bad": 13
+      }
+    },
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 48,
+        "Loose": 14,
+        "Tight": 19,
+        "Too Loose": 5,
+        "Too Tight": 12
+      }
+    }
+  ]
+}

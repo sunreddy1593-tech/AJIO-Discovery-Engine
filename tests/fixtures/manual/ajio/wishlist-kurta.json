@@ -1,0 +1,30 @@
+{
+  "documents": [
+    {
+      "source": "ajio_manual",
+      "url": "https://www.ajio.com/p/441098234",
+      "text": "Does this kurta run small? I am usually a medium and keep adding similar ones to my wishlist without ordering.",
+      "author": null,
+      "timestamp": null,
+      "meta": {
+        "content_type": "qa",
+        "product_id": "441098234",
+        "product_title": "Anouk Women Straight Kurta",
+        "extraction": "fixture"
+      }
+    },
+    {
+      "source": "ajio_manual",
+      "url": "https://www.ajio.com/p/441098234",
+      "text": "Kept this in my wishlist for three weeks watching the price. Ordered a size up after the size chart disagreed with the brand's own, and the shoulders were still tight. Returning.",
+      "author": "meera",
+      "timestamp": "12 May 2026",
+      "meta": {
+        "content_type": "review",
+        "product_id": "441098234",
+        "rating": 2,
+        "extraction": "fixture"
+      }
+    }
+  ]
+}

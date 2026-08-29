@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "469019525",
+  "product_title": "1839 Women Wirefree Soft Touch Polyamide Stretchable Lounge Bra Padded with 360 Degree Stretch",
+  "url": "https://www.ajio.com/p/469019525",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T15:36:23.416Z",
+  "average_rating": null,
+  "rating_count": 177,
+  "rating_distribution": {
+    "1": 6,
+    "2": 1,
+    "3": 6,
+    "4": 11,
+    "5": 74
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 82,
+        "Loose": 1,
+        "Tight": 5,
+        "Too Loose": 3,
+        "Too Tight": 7
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 38,
+        "Very Good": 44,
+        "Average": 5,
+        "Bad": 5,
+        "Very Bad": 6
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "467298043",
+  "product_title": "Basics Padded Non-Wired 3/4Th Coverage Backless Bra",
+  "url": "https://www.ajio.com/p/467298043",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T15:34:19.964Z",
+  "average_rating": null,
+  "rating_count": 180,
+  "rating_distribution": {
+    "1": 9,
+    "2": 4,
+    "3": 13,
+    "4": 23,
+    "5": 48
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 72,
+        "Loose": 5,
+        "Tight": 17,
+        "Too Loose": 3,
+        "Too Tight": 1
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 31,
+        "Very Good": 44,
+        "Average": 18,
+        "Bad": 2,
+        "Very Bad": 3
+      }
+    }
+  ]
+}

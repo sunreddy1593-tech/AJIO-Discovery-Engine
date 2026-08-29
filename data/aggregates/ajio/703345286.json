@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "703345286",
+  "product_title": "Women Flared Flat-Front Pants",
+  "url": "https://www.ajio.com/p/703345286",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T15:33:08.314Z",
+  "average_rating": null,
+  "rating_count": null,
+  "rating_distribution": {
+    "1": 19,
+    "2": 6,
+    "3": 11,
+    "4": 19,
+    "5": 41
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 68,
+        "Loose": 12,
+        "Tight": 10,
+        "Too Loose": 4,
+        "Too Tight": 4
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 34,
+        "Very Good": 27,
+        "Average": 22,
+        "Bad": 5,
+        "Very Bad": 9
+      }
+    }
+  ]
+}

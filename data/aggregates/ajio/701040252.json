@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "701040252",
+  "product_title": "Men Slim Fit Trousers",
+  "url": "https://www.ajio.com/p/701040252",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T16:07:25.572Z",
+  "average_rating": null,
+  "rating_count": 26,
+  "rating_distribution": {
+    "1": 19,
+    "2": 11,
+    "3": 11,
+    "4": 23,
+    "5": 34
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 58,
+        "Loose": 8,
+        "Tight": 16,
+        "Too Loose": 0,
+        "Too Tight": 16
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 36,
+        "Very Good": 9,
+        "Average": 27,
+        "Bad": 9,
+        "Very Bad": 18
+      }
+    }
+  ]
+}

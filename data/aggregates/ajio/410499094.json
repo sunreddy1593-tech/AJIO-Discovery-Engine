@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "410499094",
+  "product_title": "Classic Hybrid Quilted Leather Jacket",
+  "url": "https://www.ajio.com/p/410499094",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T16:28:08.424Z",
+  "average_rating": null,
+  "rating_count": 24,
+  "rating_distribution": {
+    "1": 45,
+    "2": 4,
+    "3": 8,
+    "4": 12,
+    "5": 29
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 100,
+        "Loose": 0,
+        "Tight": 0,
+        "Too Loose": 0,
+        "Too Tight": 0
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 16,
+        "Very Good": 33,
+        "Average": 33,
+        "Bad": 0,
+        "Very Bad": 16
+      }
+    }
+  ]
+}

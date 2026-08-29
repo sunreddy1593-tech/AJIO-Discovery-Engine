@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "469691407",
+  "product_title": "Men Pack of 3 Cotton Briefs",
+  "url": "https://www.ajio.com/p/469691407",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T16:13:03.651Z",
+  "average_rating": null,
+  "rating_count": 57,
+  "rating_distribution": {
+    "1": 15,
+    "2": 0,
+    "3": 10,
+    "4": 24,
+    "5": 49
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 48,
+        "Loose": 36,
+        "Tight": 0,
+        "Too Loose": 16,
+        "Too Tight": 0
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 29,
+        "Very Good": 37,
+        "Average": 18,
+        "Bad": 0,
+        "Very Bad": 14
+      }
+    }
+  ]
+}

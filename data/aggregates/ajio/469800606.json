@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "469800606",
+  "product_title": "Women Cable-Knit Round-Neck Allison Yarn Dress",
+  "url": "https://www.ajio.com/p/469800606",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T14:15:12.978Z",
+  "average_rating": null,
+  "rating_count": 4,
+  "rating_distribution": {
+    "1": 0,
+    "2": 0,
+    "3": 25,
+    "4": 0,
+    "5": 75
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 100,
+        "Loose": 0,
+        "Tight": 0,
+        "Too Loose": 0,
+        "Too Tight": 0
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 100,
+        "Very Good": 0,
+        "Average": 0,
+        "Bad": 0,
+        "Very Bad": 0
+      }
+    }
+  ]
+}

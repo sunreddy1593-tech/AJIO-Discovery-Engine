@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "702245209",
+  "product_title": "Speedcat Ballet Suede Women's Sneakers",
+  "url": "https://www.ajio.com/p/702245209",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T15:42:19.576Z",
+  "average_rating": null,
+  "rating_count": 61,
+  "rating_distribution": {
+    "1": 16,
+    "2": 9,
+    "3": 4,
+    "4": 9,
+    "5": 59
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 80,
+        "Loose": 14,
+        "Tight": 4,
+        "Too Loose": 0,
+        "Too Tight": 0
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 76,
+        "Very Good": 14,
+        "Average": 4,
+        "Bad": 4,
+        "Very Bad": 0
+      }
+    }
+  ]
+}

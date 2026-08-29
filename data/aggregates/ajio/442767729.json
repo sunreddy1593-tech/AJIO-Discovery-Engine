@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "442767729",
+  "product_title": "Men Logo Oversized Track Jacket",
+  "url": "https://www.ajio.com/p/442767729",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T16:26:33.497Z",
+  "average_rating": null,
+  "rating_count": 37,
+  "rating_distribution": {
+    "1": 18,
+    "2": 5,
+    "3": 10,
+    "4": 13,
+    "5": 51
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 53,
+        "Loose": 33,
+        "Tight": 0,
+        "Too Loose": 13,
+        "Too Tight": 0
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 42,
+        "Very Good": 14,
+        "Average": 21,
+        "Bad": 7,
+        "Very Bad": 14
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+Problem statement
+
+You are a Product Manager on the Growth Team at AJIO.
+Millions of users browse fashion products, save items they like, and add products to their wishlists. A wishlist represents a particularly interesting signal: the user has expressed explicit interest in an item but has stopped short of purchasing it.
+Over time, users can accumulate dozens—or even hundreds—of wishlisted products, while only a small proportion eventually translate into purchases.
+One of your company’s strategic goals is to:
+Increase the percentage of users who purchase at least one item from their wishlist within 30 days of adding it.
+Improving wishlist-to-purchase conversion could increase purchase frequency, improve monetization from existing users, and help the company extract greater value from high-intent demand already present on the platform.
+However, you are not being given the underlying user problem. Your task is to discover it. And for the solution, the constraint is that you CANNOT offer monetary incentives to the users.
+
+I am choosing AJIO as the product.
+
+Part 1: Build an AI-Powered Discovery Engine
+Before proposing any solution, you must build an AI-powered system that analyzes user feedback at scale.
+
+The goal is to analyze sources such as:
+
+App Store reviews
+Play Store reviews
+Reddit discussions
+Fashion and shopping communities
+Social media conversations
+YouTube comments
+Product reviews and Q&A where relevant
+Other publicly available conversations about online fashion shopping
+
+Your discovery engine should help answer questions such as:
+
+Why do users add fashion products to their wishlist?
+What prevents wishlisted products from eventually being purchased?
+What uncertainties remain after users have identified a product they like?
+What causes users to postpone a purchase?
+How do users compare multiple shortlisted products?
+What information do users seek outside Myntra/AJIO before purchasing?
+What role do fit, size, styling, price, reviews, occasion and social validation play?
+When do users use the wishlist as genuine purchase intent versus simply as a bookmarking mechanism?
+How do these behaviors differ across user segments?
+What unmet needs emerge consistently across user conversations?
+
+Your workflow should go beyond summarizing reviews or performing sentiment analysis.
+It should enable you to identify, quantify where possible, and compare potential opportunity areas that could influence the stated business metric.

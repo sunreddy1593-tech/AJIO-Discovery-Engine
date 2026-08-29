@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "443116234",
+  "product_title": "Men Slim Fit Chinos",
+  "url": "https://www.ajio.com/p/443116234",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T16:05:08.136Z",
+  "average_rating": null,
+  "rating_count": 150,
+  "rating_distribution": {
+    "1": 17,
+    "2": 9,
+    "3": 16,
+    "4": 22,
+    "5": 34
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 63,
+        "Loose": 21,
+        "Tight": 10,
+        "Too Loose": 2,
+        "Too Tight": 2
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 16,
+        "Very Good": 39,
+        "Average": 37,
+        "Bad": 6,
+        "Very Bad": 0
+      }
+    }
+  ]
+}

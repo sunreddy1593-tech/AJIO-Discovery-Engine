@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "443612323",
+  "product_title": "Women Striped Relaxed Fit Top",
+  "url": "https://www.ajio.com/p/443612323",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T14:11:15.501Z",
+  "average_rating": null,
+  "rating_count": 17,
+  "rating_distribution": {
+    "1": 5,
+    "2": 11,
+    "3": 17,
+    "4": 5,
+    "5": 58
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 100,
+        "Loose": 0,
+        "Tight": 0,
+        "Too Loose": 0,
+        "Too Tight": 0
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 80,
+        "Very Good": 20,
+        "Average": 0,
+        "Bad": 0,
+        "Very Bad": 0
+      }
+    }
+  ]
+}

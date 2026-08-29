@@ -1,0 +1,15 @@
+{
+  "documents": [
+    {
+      "source": "quora_manual",
+      "url": "https://www.quora.com/Is-Ajio-sizing-reliable-compared-to-Myntra",
+      "text": "I keep saving dresses on Ajio and never checking out because the size charts contradict the reviews. Medium from one brand is a large from another, and I would rather wait than pay for a return.",
+      "author": null,
+      "timestamp": null,
+      "meta": {
+        "question": "Is Ajio sizing reliable compared to Myntra?",
+        "extraction": "fixture"
+      }
+    }
+  ]
+}

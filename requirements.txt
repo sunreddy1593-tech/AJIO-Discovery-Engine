@@ -1,0 +1,41 @@
+# Pinned to the versions resolved on Python 3.12.7 / Windows.
+# Direct dependencies only; transitive versions are left to the resolver.
+# Re-pin with: .venv\Scripts\python.exe -m pip freeze
+
+# --- config and contracts ---
+python-dotenv==1.2.3
+PyYAML==6.0.3
+pydantic==2.13.4
+pydantic-settings==2.15.0
+
+# --- collection ---
+requests==2.34.2
+tenacity==9.1.4
+beautifulsoup4==4.15.0
+lxml==6.1.1
+google-play-scraper==1.2.7
+praw==8.0.3
+google-api-python-client==2.198.0
+
+# --- text processing / exclusions ---
+emoji==2.15.0          # authoritative emoji detection (edge-case 3.2.1)
+langdetect==1.0.9      # seed pinned at import for determinism (edge-case 3.3.1)
+# No simhash library: datasketch provides only MinHash/LSH, which measure Jaccard
+# similarity and expose no bitwise fingerprint, so the Hamming threshold the
+# architecture specifies cannot be expressed with it. src/common/hashing.py
+# implements a 64-bit simhash over hashlib.blake2b instead.
+
+# --- LLM ---
+groq==1.6.0
+
+# --- quantification and synthesis ---
+numpy==2.5.2
+pandas==3.0.5
+scipy==1.18.0
+Jinja2==3.1.6
+
+# --- explorer (read-only Streamlit over frozen outputs) ---
+streamlit==1.62.0
+
+# --- testing ---
+pytest==9.1.1

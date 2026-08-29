@@ -1,0 +1,294 @@
+# Non-secret run configuration. Secrets live in .env.
+# Every value here feeds config_hash, which is stamped into run_log for provenance.
+
+model:
+  provider: groq
+  name: openai/gpt-oss-120b       # pinned; changing this invalidates the tag cache
+  # Llama 3.x is no longer offered on this account, so triage runs on the small
+  # GPT-OSS model: same API surface, same governor, strict schema support.
+  triage_name: openai/gpt-oss-20b
+  temperature: 0
+  seed: 20260818
+  response_format: json_schema    # strict constrained decoding
+  strict: true
+  reasoning_effort: low
+  include_reasoning: false
+  docs_per_request: 6
+  triage_docs_per_request: 20     # triage shares the 1,000 RPD cap, so batch harder
+  max_docs_per_run: 5000
+  # Must cover reasoning + visible output, or strict mode rejects the truncated
+  # generation with 400 json_validate_failed (edge-case 4.1.4). Measured need is
+  # 889 for a 6-doc batch, 285 of it reasoning; this leaves ~4x headroom.
+  max_completion_tokens: 4096
+  max_doc_tokens: 700             # per-document truncation for tagging (edge-case 1.2.4)
+
+# Free-tier ceilings. RPD and TPM are confirmed from live x-ratelimit-* headers
+# (both models: 1000 requests, 8000 TPM). TPD is not exposed in headers and comes
+# from Groq's published limits, so the governor tracks it locally.
+rate_limits:
+  tagging:
+    rpm: 30
+    rpd: 1000
+    tpm: 8000
+    tpd: 200000
+  triage:
+    rpm: 30
+    rpd: 1000
+    tpm: 8000
+    tpd: 200000
+
+collection:
+  request_delay_seconds: 1.0
+  max_requests_per_run: 5000
+  respect_robots_txt: true        # non-negotiable for every scraped source
+  per_domain_delay_seconds: 3.0
+  scraper_user_agent: "ajio-discovery-engine/0.1 (research project; +contact in README)"
+
+  # Phase 2 exit criteria, reported at the end of every run. These are targets to
+  # be judged against, not gates: the runner prints how far short it fell and
+  # which pre-purchase sources produced nothing, because the useful question is
+  # never "did we hit 2,000" but "which source stopped feeding us".
+  #
+  # Two units, because the first version of this block had only one and it
+  # certified a signal the next stage deleted (plan §3.3). 4,494 pre-purchase raw
+  # records cleared a floor of 2,000 while 180 pre-purchase *documents* reached the
+  # corpus — a 96% loss on the source the research question depends on most,
+  # invisible because the floor was measured one stage before the filters that did
+  # the cutting. So:
+  #
+  #   *_records    a leading indicator. Cheap, immediate, and known to overstate.
+  #   *_documents  the gate. Counted after the hard exclusions in filters below,
+  #                which is the unit the tagger and every metric downstream see.
+  #
+  # The document floors are deliberately not "the record floors divided by the
+  # observed survival rate": they are the sizes Phase 3 and Phase 5 actually need
+  # (1,500 relevant documents for stable prevalence, 2,000 pre-purchase for
+  # segment-level claims about deliberation).
+  floors:
+    pre_purchase_records: 2000
+    total_records: 15000
+    pre_purchase_documents: 2000
+    total_documents: 1500
+
+  # ---- Pre-purchase deliberation sources (highest value for wishlist blockers) ----
+  youtube:
+    # The highest-value source on the roster and, with AJIO on-site blocked and
+    # both manual routes empty, effectively the only live pre-purchase one. The
+    # first run collected 4,494 comments of which 180 survived to the corpus, so
+    # this block is sized for the 96% loss to the hard exclusions rather than for
+    # the raw count (implementation-plan.md §3.3).
+    #
+    # max_videos_per_term is 50 because that is what search.list already charges
+    # for: one call costs 100 quota units and returns up to 50 results, so the
+    # previous 15 paid full price and discarded two thirds of the response.
+    #
+    # Terms are chosen for deliberation language rather than reach. A haul or
+    # try-on video draws "should I buy this" comments; a size/fit query draws the
+    # specific uncertainty the taxonomy codes as fit_size_uncertainty; the
+    # comparison terms draw the "better alternative exists" blocker. Adding a
+    # term costs 100 units, so the budget is ~1,200 of 10,000/day for search
+    # plus roughly the same again for comment pagination at 1 unit per call.
+    enabled: true
+    query_terms:
+      - "ajio haul"
+      - "ajio try on haul"
+      - "ajio kurta haul review"
+      - "ajio honest review quality"
+      - "myntra haul review"
+      - "myntra vs ajio which is better"
+      - "online shopping size fit india"
+      - "indian online shopping size chart problem"
+      - "ajio dress try on review"
+      - "indian fashion haul try on review"
+      - "online clothes shopping return experience india"
+      - "ajio order review size issue"
+    max_videos_per_term: 50
+    max_comments_per_video: 300
+  ajio_onsite:
+    # Product reviews AND Q&A. Q&A is the single richest pre-purchase source:
+    # "does this run small?" is the blocker we are hunting.
+    #
+    # Live probe, 2026-08-19. robots.txt now fetches with a 200 given
+    # browser-grade headers, correcting the earlier note in edge-case 1.1.13 that
+    # the policy file itself was refused. Everything else still returns 403 from
+    # an Akamai edge ("Reference #18..." / errors.edgesuite.net), including the
+    # sitemaps. So the block is bot management, not policy: robots.txt permits
+    # /p/ and /c/ for User-agent: *, and the collector is refused anyway.
+    # Escalation is therefore a browser-driven fetch, not a header tweak.
+    enabled: true
+    # Category listing pages to harvest product ids from. Product ids are resolved
+    # at run time by scanning for /p/<digits> links, so these URLs only need to be
+    # pages that link to products — they do not need to be stable product lists.
+    #
+    # The /<slug>/c/<id> shape is corroborated by AJIO's own robots.txt, which
+    # carries "Disallow: /*/c/83?" — so the family of URLs is right. The
+    # individual slug/id pairs below remain UNCONFIRMED because every fetch is
+    # refused; they cannot be validated until the 403 is solved. Run
+    # `python scripts/verify_sources.py` once it is: a wrong URL here is
+    # indistinguishable from a block, and that script tells the two apart.
+    category_urls:
+      - "https://www.ajio.com/women-kurtas-kurtis/c/830216012"
+      - "https://www.ajio.com/women-dresses/c/830216004"
+      - "https://www.ajio.com/men-tshirts/c/830308001"
+      - "https://www.ajio.com/women-tops/c/830216006"
+      - "https://www.ajio.com/men-shirts/c/830308002"
+    # Explicit product URLs take precedence over category harvesting when set.
+    product_urls: []
+    max_products: 200
+    max_reviews_per_product: 100
+    max_qa_per_product: 50
+    browser_user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    # Deliberately empty. AJIO's robots.txt disallows "/api/*" and "/api/" for
+    # every user agent, so with respect_robots_txt: true these endpoints can
+    # never be fetched — the guessed templates that used to live here described a
+    # path this project has committed to not taking. Extraction falls back to
+    # schema.org markup, then visible HTML. Do not repopulate these without a
+    # documented change to the compliance stance.
+    review_api_template: ""
+    qa_api_template: ""
+  ajio_manual:
+    # AJIO has no on-site free text sitewide — only rating/fit/quality bars, no
+    # review or Q&A prose; nothing to hand-collect. Same empty status as
+    # ajio_onsite. This was the documented fallback for that Akamai block, on the
+    # assumption that a person could read what the collector was refused; the
+    # pages carry no prose for either of them to reach, so the route is off as a
+    # site characteristic rather than as a pending task.
+    #
+    # The loader, the collector and the file format are kept intact — nothing here
+    # is deleted — so this is one flag to flip if AJIO ever publishes review text.
+    # Every block would still need a product id and a '## Q&A' or '## Reviews'
+    # header. The content type is never inferred from the prose — mixing questions
+    # with reviews destroys the pre/post-purchase split (edge-case 1.1.14) — so an
+    # unlabelled block is skipped and counted rather than guessed at. The full
+    # file format is documented in src/collect/ajio_manual.py.
+    enabled: false
+    import_dir: data/manual/ajio
+  quora_manual:
+    # Manual import only. Quora's robots.txt prohibits bots from using its
+    # content for AI/ML systems, so this collector never touches the network:
+    # drop saved threads as .txt or .md into import_dir.
+    enabled: true
+    import_dir: data/manual/quora
+
+  # ---- App experience + mixed pre/post purchase ----
+  play_store:
+    enabled: true
+    app_ids: [com.ril.ajio, com.myntra.android]
+    languages: [en]
+    countries: [in]
+    max_reviews: 8000
+  app_store:
+    # Verified against the live feed on 2026-08-20 after the source recorded
+    # zero_yield. The cause was not the feed: id 1039873143 configured here did
+    # not exist, and iTunes answers a dead app id with HTTP 200, a well-formed
+    # feed envelope and no "entry" key at all — indistinguishable from an app
+    # that has no reviews. The ids below come from the iTunes search API and are
+    # each confirmed to return the full 500-review ceiling. Myntra is the
+    # comparison set, matching play_store.
+    #
+    # Validate with `python scripts/verify_sources.py --source app_store`, which
+    # checks every id against the lookup API before trusting the feed.
+    enabled: true
+    app_ids: ["1113425372", "907394059"]   # AJIO (Reliance Retail), Myntra
+    countries: [in]
+    max_pages: 10                 # RSS caps at ~500 reviews (edge-case 1.1.6)
+
+  # ---- Post-purchase review and complaint sources ----
+  mouthshut:
+    # robots.txt: Allow / with Content-Signal "ai-train=no, use=reference".
+    # We analyze and reference rather than train, which is within that signal.
+    #
+    # Disabled after a live probe on 2026-08-19, for two separate reasons found
+    # in sequence. First, the URL configured here previously
+    # (/websites/ajiocom-reviews-925915881) was not AJIO at all: it returned 200
+    # with a "Nadiad Restaurants" category page, the worst failure shape there
+    # is, because a wrong page that answers 200 looks healthy. Second, the
+    # correct URL below is right — its page-2 title reads "Reviews - 21 to 40" —
+    # but the review list is rendered client-side. The served HTML contains the
+    # aggregate rating and two teaser links and no review bodies at all, so this
+    # static collector can only ever yield zero and trip its own tripwire on
+    # every run. Re-enable when a browser-rendering fetch exists; the ~2,600
+    # reviews are real and worth having.
+    enabled: false
+    listing_urls: ["https://www.mouthshut.com/product-reviews/ajio-reviews-925839312"]
+    max_pages_per_listing: 30
+    max_reviews: 3000
+  complaints_board:
+    # "/ajio" returned 404. Verified path as of 2026-08-19, holding five
+    # complaints on a single page with /page/2 returning 404. Small, stale
+    # (newest Jan 2024) and post-purchase, so it is kept for severity signal
+    # only. max_pages is low because pagination demonstrably ends at one.
+    enabled: true
+    company_paths: ["/ajio-b144612"]
+    max_pages_per_company: 3
+  consumer_complaints_in:
+    # "/ajio-b110716" returned 404. Verified path as of 2026-08-19: 20 complaints
+    # per page, /page/N pagination confirmed, entries as recent as Apr 2026.
+    enabled: true
+    company_paths: ["/ajio-b115930"]
+    max_pages_per_company: 30
+  trustpilot:
+    # robots.txt disallows /reviews/ and /api/*, so honouring it leaves little
+    # to collect. Enabled for completeness; expect near-zero yield and check
+    # the funnel report before relying on it.
+    enabled: true
+    domains: ["ajio.com"]
+    max_pages: 10
+
+  # ---- Disabled ----
+  reddit:
+    # Retained so it can be switched back on: set enabled: true and add
+    # REDDIT_* credentials to .env. Reddit is the richest source of
+    # "still sitting in my wishlist because..." language.
+    enabled: false
+    subreddits: [IndianFashionAddicts, india, IndianStreetBets, femalefashionadvice, malefashionadvice, OnlineShoppingIndia]
+    queries: ["ajio", "myntra", "wishlist", "size chart", "return policy fashion"]
+    max_posts: 1500
+    include_comments: true
+
+filters:
+  # Lowered from 8 to 3. At 8 the gate was removing 35,345 of 55,731 records —
+  # 63% of everything collected — and the content it removed was not noise but
+  # the shortest form of the exact question this project exists to find: "does
+  # this run small?" is four words (edge-case 1.1.13e). Two consequences are
+  # now live and are handled downstream rather than here:
+  #   - langdetect no longer has a long-text guarantee (edge-case 3.3.2). The
+  #     gate used to run first and keep anything under 8 words away from the
+  #     detector; at 3 the detector sees 3-word strings, where it is unreliable.
+  #     `language_min_words` below restores that protection explicitly.
+  #   - the all-stopword case ("this is the one that I was looking at") stops
+  #     being rare and becomes the common shape of a 3-word document, so
+  #     `min_content_words` is what actually carries length now (edge-case 2.8).
+  min_words: 3
+  exclude_emoji: true           # drop when the remainder after stripping emoji is still below min_words (emoji-only). A trailing heart on a real comment is kept — Phase 3 rejected-pool audit, 2026-08-28.
+  excluded_languages: [hi]      # Hindi excluded; romanized Hinglish retained
+  language_confidence: 0.7      # only exclude at or above this confidence
+  language_min_words: 8         # below this, trust script detection only (edge-case 3.3.2)
+  min_chars: 40                 # cheap pre-filter only; min_words is authoritative
+  min_content_words: 3          # non-stopword floor (edge-case 2.8)
+  near_duplicate_min_words: 25  # simhash is unreliable below this (edge-case 2.3)
+  # Calibrated on 64-bit bigram simhash, not inherited from web-scale simhash
+  # practice: on review-length text a single reworded phrase already costs 6 bits,
+  # so the original 3 would have marked almost no duplicates. Measured near-
+  # duplicates reached 9 bits and unrelated reviews stayed above 22.
+  near_duplicate_hamming: 12
+  relevance_keywords_path: config/relevance_keywords.txt
+
+quantification:
+  recency_half_life_days: 365
+  low_confidence_min_docs: 20
+  min_distinct_authors: 3       # an opportunity from one author is not reportable
+  max_docs_per_author_per_tag: 5
+  cluster_jaccard_min: 0.5      # merge tags that share most of their supporting docs (§5.11)
+
+paths:
+  raw_dir: data/raw
+  # AJIO's own aggregate numbers (star distribution, fit/quality percentages),
+  # one JSON per product under aggregates_dir/ajio. These are NOT documents and
+  # never enter the corpus, tagging or dedupe; Phase 6 reads them as a separate
+  # quantitative side-channel. See data/aggregates/ajio/README.md.
+  aggregates_dir: data/aggregates
+  interim_db: data/interim/discovery.db
+  processed_dir: data/processed
+  outputs_dir: outputs
+  logs_dir: logs

@@ -1,0 +1,29 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "700839485",
+  "product_title": "Men Pack of 3 Ankle-Length Socks",
+  "url": "https://www.ajio.com/p/700839485",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T16:25:12.970Z",
+  "average_rating": null,
+  "rating_count": 147,
+  "rating_distribution": {
+    "1": 10,
+    "2": 4,
+    "3": 8,
+    "4": 15,
+    "5": 60
+  },
+  "opinions": [
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 44,
+        "Very Good": 31,
+        "Average": 16,
+        "Bad": 1,
+        "Very Bad": 6
+      }
+    }
+  ]
+}

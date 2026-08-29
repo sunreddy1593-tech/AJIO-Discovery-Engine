@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "703587684",
+  "product_title": "Women Straight Fit Trousers",
+  "url": "https://www.ajio.com/p/703587684",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T15:31:41.408Z",
+  "average_rating": null,
+  "rating_count": 143,
+  "rating_distribution": {
+    "1": 28,
+    "2": 9,
+    "3": 17,
+    "4": 17,
+    "5": 26
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 50,
+        "Loose": 20,
+        "Tight": 13,
+        "Too Loose": 10,
+        "Too Tight": 6
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 21,
+        "Very Good": 12,
+        "Average": 25,
+        "Bad": 15,
+        "Very Bad": 25
+      }
+    }
+  ]
+}

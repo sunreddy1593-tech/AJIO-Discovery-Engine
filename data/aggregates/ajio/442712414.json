@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "442712414",
+  "product_title": "Women High-Rise Wide Leg Jeans",
+  "url": "https://www.ajio.com/p/442712414",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T15:16:06.635Z",
+  "average_rating": null,
+  "rating_count": 24,
+  "rating_distribution": {
+    "1": 8,
+    "2": 12,
+    "3": 8,
+    "4": 25,
+    "5": 45
+  },
+  "opinions": [
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 55,
+        "Very Good": 44,
+        "Average": 0,
+        "Bad": 0,
+        "Very Bad": 0
+      }
+    },
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 55,
+        "Loose": 33,
+        "Tight": 11,
+        "Too Loose": 0,
+        "Too Tight": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+# Per-tag cue lexicon backing the deterministic attribution screen (plan §4.4).
+#
+# The screen raises `no_cue_overlap` when a tag's justifying quote shares no cue
+# term with that tag's list here. It NEVER rejects a tag on its own — it routes a
+# human's attention and down-weights scoring (plan §4.4, §5.6). It has both false
+# positives and false negatives and is calibrated against gold spans before its
+# output is interpreted, so this list is a starting lexicon, not ground truth.
+
+blocker_type:
+  fit_size_uncertainty: [size, sizing, fit, fits, fitting, small, large, tight, loose, measurement, true to size, runs]
+  quality_doubt: [quality, cheap, thin, flimsy, material, fabric, durable, lasts, worth]
+  color_fabric_accuracy: [color, colour, shade, fabric, material, looked different, not as shown, picture]
+  return_friction: [return, exchange, refund, replace, policy]
+  delivery_uncertainty: [delivery, shipping, deliver, arrive, courier, dispatch]
+  trust_authenticity: [genuine, authentic, fake, original, real, trust, scam]
+  choice_overload: [too many, options, confused between, which one, so many, overwhelmed]
+  styling_uncertainty: [style, styling, wear it, pair, look on me, how to wear, goes with]
+  social_validation_needed: [opinion, friends, what do you think, should i, thoughts, suggest]
+  checkout_friction: [checkout, payment, cart, coupon not, app crash, could not order, error]
+  price_absolute: [expensive, costly, too much, cant afford, price is high, out of budget]
+  price_expectation: [cheaper on, price drop, wait for sale, discount, same on, lower price]
+
+uncertainty_type:
+  will_it_fit: [fit, size, small, large, tight, loose, true to size]
+  how_does_it_look_on_me: [on me, real person, model, look on, body type, how it looks]
+  is_quality_worth_it: [quality, worth, material, fabric, durable, cheap]
+  true_color: [color, colour, shade, true color, as shown, different]
+  occasion_appropriate: [occasion, wedding, party, office, festive, event]
+  can_i_return: [return, exchange, refund, if it doesnt fit]
+  better_alternative_exists: [better, alternative, other option, compare, versus, cheaper]
+
+wishlist_motivation:
+  price_watch: [price drop, wait for sale, discount, sale, watch the price]
+  decide_later: [later, decide, thinking, not sure yet, maybe, eyeing]
+  compare_options: [compare, versus, which one, better, shortlist, between]
+  awaiting_occasion: [occasion, wedding, festival, party, event, for the]
+  budget_timing: [salary, budget, next month, payday, afford next]
+  inspiration_bookmark: [inspiration, save for reference, idea, bookmark, love the look]
+  size_unavailable: [out of stock, size not available, sold out, unavailable, waitlist]
+  seeking_opinion: [opinion, what do you think, should i, suggest, thoughts]
+  cart_proxy: [cart, save it in cart, keep in bag, hold in cart]

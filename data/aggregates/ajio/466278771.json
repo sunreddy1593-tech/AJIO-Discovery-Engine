@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "466278771",
+  "product_title": "Men Printed Slim Fit Shirt with Spread Collar",
+  "url": "https://www.ajio.com/p/466278771",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T15:56:33.851Z",
+  "average_rating": null,
+  "rating_count": 35,
+  "rating_distribution": {
+    "1": 17,
+    "2": 11,
+    "3": 8,
+    "4": 22,
+    "5": 40
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 72,
+        "Loose": 0,
+        "Tight": 18,
+        "Too Loose": 0,
+        "Too Tight": 9
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 8,
+        "Very Good": 41,
+        "Average": 25,
+        "Bad": 8,
+        "Very Bad": 16
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "442386498",
+  "product_title": "Women Checked Sheath Dress",
+  "url": "https://www.ajio.com/p/442386498",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T15:01:27.727Z",
+  "average_rating": null,
+  "rating_count": 21,
+  "rating_distribution": {
+    "1": 14,
+    "2": 14,
+    "3": 4,
+    "4": 4,
+    "5": 61
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 40,
+        "Loose": 0,
+        "Tight": 0,
+        "Too Loose": 0,
+        "Too Tight": 60
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 20,
+        "Very Good": 60,
+        "Average": 20,
+        "Bad": 0,
+        "Very Bad": 0
+      }
+    }
+  ]
+}

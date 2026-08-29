@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "702365157",
+  "product_title": "Women Schiffili Embroidered Round-Neck A-Line Dress",
+  "url": "https://www.ajio.com/p/702365157",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T15:09:43.749Z",
+  "average_rating": null,
+  "rating_count": 49,
+  "rating_distribution": {
+    "1": 10,
+    "2": 4,
+    "3": 16,
+    "4": 26,
+    "5": 42
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 86,
+        "Loose": 9,
+        "Tight": 4,
+        "Too Loose": 0,
+        "Too Tight": 0
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 38,
+        "Very Good": 28,
+        "Average": 33,
+        "Bad": 0,
+        "Very Bad": 0
+      }
+    }
+  ]
+}

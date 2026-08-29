@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "469800972",
+  "product_title": "Women 726 High-Rise Flared Jeans",
+  "url": "https://www.ajio.com/p/469800972",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T15:14:30.844Z",
+  "average_rating": null,
+  "rating_count": 284,
+  "rating_distribution": {
+    "1": 17,
+    "2": 4,
+    "3": 14,
+    "4": 16,
+    "5": 46
+  },
+  "opinions": [
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 33,
+        "Very Good": 33,
+        "Average": 10,
+        "Bad": 7,
+        "Very Bad": 14
+      }
+    },
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 55,
+        "Loose": 24,
+        "Tight": 6,
+        "Too Loose": 10,
+        "Too Tight": 3
+      }
+    }
+  ]
+}

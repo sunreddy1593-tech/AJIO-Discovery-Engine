@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "469583900",
+  "product_title": "Women UNO Lite Low-Top Lace-Up Shoes",
+  "url": "https://www.ajio.com/p/469583900",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T15:45:45.130Z",
+  "average_rating": null,
+  "rating_count": 32,
+  "rating_distribution": {
+    "1": 6,
+    "2": 0,
+    "3": 3,
+    "4": 21,
+    "5": 68
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 89,
+        "Loose": 10,
+        "Tight": 0,
+        "Too Loose": 0,
+        "Too Tight": 0
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 65,
+        "Very Good": 30,
+        "Average": 5,
+        "Bad": 0,
+        "Very Bad": 0
+      }
+    }
+  ]
+}

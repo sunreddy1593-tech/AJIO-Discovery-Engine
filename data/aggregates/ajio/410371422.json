@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "410371422",
+  "product_title": "Printed Fit & Flare Dress",
+  "url": "https://www.ajio.com/p/410371422",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T12:27:35.177Z",
+  "average_rating": null,
+  "rating_count": 132,
+  "rating_distribution": {
+    "1": 8,
+    "2": 4,
+    "3": 4,
+    "4": 12,
+    "5": 70
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 73,
+        "Loose": 0,
+        "Tight": 23,
+        "Too Loose": 3,
+        "Too Tight": 0
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 42,
+        "Very Good": 28,
+        "Average": 14,
+        "Bad": 3,
+        "Very Bad": 10
+      }
+    }
+  ]
+}

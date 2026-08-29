@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "469745429",
+  "product_title": "Women Pack of 3 Bikini Briefs",
+  "url": "https://www.ajio.com/p/469745429",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T15:40:54.486Z",
+  "average_rating": null,
+  "rating_count": 25,
+  "rating_distribution": {
+    "1": 8,
+    "2": 8,
+    "3": 4,
+    "4": 32,
+    "5": 48
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 92,
+        "Loose": 0,
+        "Tight": 7,
+        "Too Loose": 0,
+        "Too Tight": 0
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 50,
+        "Very Good": 28,
+        "Average": 21,
+        "Bad": 0,
+        "Very Bad": 0
+      }
+    }
+  ]
+}

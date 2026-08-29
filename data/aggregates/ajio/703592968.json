@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "703592968",
+  "product_title": "Women Regular Fit Checks Top",
+  "url": "https://www.ajio.com/p/703592968",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T14:00:15.992Z",
+  "average_rating": null,
+  "rating_count": 92,
+  "rating_distribution": {
+    "1": 17,
+    "2": 10,
+    "3": 10,
+    "4": 11,
+    "5": 48
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 58,
+        "Loose": 16,
+        "Tight": 8,
+        "Too Loose": 12,
+        "Too Tight": 4
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 22,
+        "Very Good": 19,
+        "Average": 32,
+        "Bad": 9,
+        "Very Bad": 16
+      }
+    }
+  ]
+}

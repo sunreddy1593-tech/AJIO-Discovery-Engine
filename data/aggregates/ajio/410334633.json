@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "410334633",
+  "product_title": "Floral Embroidered Long A-Line Dress",
+  "url": "https://www.ajio.com/p/410334633",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T12:26:01.336Z",
+  "average_rating": null,
+  "rating_count": 59,
+  "rating_distribution": {
+    "1": 8,
+    "2": 6,
+    "3": 10,
+    "4": 22,
+    "5": 52
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 65,
+        "Loose": 12,
+        "Tight": 9,
+        "Too Loose": 3,
+        "Too Tight": 9
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 27,
+        "Very Good": 29,
+        "Average": 32,
+        "Bad": 5,
+        "Very Bad": 5
+      }
+    }
+  ]
+}

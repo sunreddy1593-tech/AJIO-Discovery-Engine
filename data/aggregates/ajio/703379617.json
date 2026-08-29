@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "703379617",
+  "product_title": "Men Mid-Rise Straight Jeans",
+  "url": "https://www.ajio.com/p/703379617",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T16:01:06.017Z",
+  "average_rating": null,
+  "rating_count": 43,
+  "rating_distribution": {
+    "1": 34,
+    "2": 9,
+    "3": 6,
+    "4": 13,
+    "5": 34
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 42,
+        "Loose": 14,
+        "Tight": 0,
+        "Too Loose": 28,
+        "Too Tight": 14
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 22,
+        "Very Good": 22,
+        "Average": 0,
+        "Bad": 22,
+        "Very Bad": 33
+      }
+    }
+  ]
+}

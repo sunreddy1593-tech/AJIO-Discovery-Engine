@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "700766865",
+  "product_title": "High Impact Eversculpt Women Training Bra",
+  "url": "https://www.ajio.com/p/700766865",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T15:38:12.108Z",
+  "average_rating": null,
+  "rating_count": 43,
+  "rating_distribution": {
+    "1": 23,
+    "2": 0,
+    "3": 6,
+    "4": 20,
+    "5": 48
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 60,
+        "Loose": 20,
+        "Tight": 5,
+        "Too Loose": 15,
+        "Too Tight": 0
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 40,
+        "Very Good": 36,
+        "Average": 9,
+        "Bad": 9,
+        "Very Bad": 4
+      }
+    }
+  ]
+}

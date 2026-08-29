@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "469473061",
+  "product_title": "Women Gamma Force Lace-Up Sneakers",
+  "url": "https://www.ajio.com/p/469473061",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T15:43:47.835Z",
+  "average_rating": null,
+  "rating_count": 403,
+  "rating_distribution": {
+    "1": 17,
+    "2": 5,
+    "3": 10,
+    "4": 17,
+    "5": 48
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 52,
+        "Loose": 26,
+        "Tight": 12,
+        "Too Loose": 6,
+        "Too Tight": 2
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 30,
+        "Very Good": 28,
+        "Average": 20,
+        "Bad": 10,
+        "Very Bad": 10
+      }
+    }
+  ]
+}

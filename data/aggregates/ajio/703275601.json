@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "703275601",
+  "product_title": "Women Self-design Tiered Dress",
+  "url": "https://www.ajio.com/p/703275601",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T13:49:20.667Z",
+  "average_rating": null,
+  "rating_count": 101,
+  "rating_distribution": {
+    "1": 15,
+    "2": 3,
+    "3": 12,
+    "4": 14,
+    "5": 52
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 85,
+        "Loose": 8,
+        "Tight": 0,
+        "Too Loose": 5,
+        "Too Tight": 0
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 53,
+        "Very Good": 29,
+        "Average": 14,
+        "Bad": 2,
+        "Very Bad": 0
+      }
+    }
+  ]
+}

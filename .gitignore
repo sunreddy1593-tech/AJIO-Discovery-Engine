@@ -1,0 +1,47 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Data artifacts (regenerable / large / personal text from public posts)
+data/raw/
+data/interim/
+*.sqlite
+*.db
+*.db-wal
+*.db-shm
+logs/
+
+# Processed tables: keep CSVs; ignore anything else in the folder
+data/processed/*
+!data/processed/*.csv
+
+# Reports: keep markdown; ignore csv copies, jsonl audits, scratch scripts
+outputs/*
+!outputs/*.md
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local one-off scratch
+_check_fk.py
+
+# Local Stitch HTML dumps (not the product)
+_stitch_ui/
+_stitch_ui_new/
+stitch_ajio_intelligence_engine*/
+
+# Editor / OS
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini

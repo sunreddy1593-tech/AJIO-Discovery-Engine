@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "700238607",
+  "product_title": "Men Slim Fit Trousers with Insert Pockets",
+  "url": "https://www.ajio.com/p/700238607",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T16:04:16.660Z",
+  "average_rating": null,
+  "rating_count": 63,
+  "rating_distribution": {
+    "1": 14,
+    "2": 4,
+    "3": 11,
+    "4": 14,
+    "5": 55
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 54,
+        "Loose": 18,
+        "Tight": 18,
+        "Too Loose": 0,
+        "Too Tight": 9
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 28,
+        "Very Good": 28,
+        "Average": 14,
+        "Bad": 7,
+        "Very Bad": 21
+      }
+    }
+  ]
+}

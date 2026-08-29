@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "703713970",
+  "product_title": "Men Striped Regular Fit Shirt",
+  "url": "https://www.ajio.com/p/703713970",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T15:52:30.433Z",
+  "average_rating": null,
+  "rating_count": 449,
+  "rating_distribution": {
+    "1": 29,
+    "2": 10,
+    "3": 13,
+    "4": 18,
+    "5": 28
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 61,
+        "Loose": 7,
+        "Tight": 15,
+        "Too Loose": 4,
+        "Too Tight": 11
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 16,
+        "Very Good": 27,
+        "Average": 16,
+        "Bad": 11,
+        "Very Bad": 27
+      }
+    }
+  ]
+}

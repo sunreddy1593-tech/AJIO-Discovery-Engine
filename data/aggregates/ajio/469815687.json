@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "469815687",
+  "product_title": "Men Patterned Regular Fit Polo T-Shirt",
+  "url": "https://www.ajio.com/p/469815687",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T16:09:39.278Z",
+  "average_rating": null,
+  "rating_count": 28,
+  "rating_distribution": {
+    "1": 10,
+    "2": 7,
+    "3": 10,
+    "4": 14,
+    "5": 57
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 50,
+        "Loose": 50,
+        "Tight": 0,
+        "Too Loose": 0,
+        "Too Tight": 0
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 37,
+        "Very Good": 25,
+        "Average": 12,
+        "Bad": 12,
+        "Very Bad": 12
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "703656203",
+  "product_title": "Women Relaxed Fit Casual Top",
+  "url": "https://www.ajio.com/p/703656203",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T14:09:10.065Z",
+  "average_rating": null,
+  "rating_count": 85,
+  "rating_distribution": {
+    "1": 36,
+    "2": 5,
+    "3": 10,
+    "4": 11,
+    "5": 35
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 83,
+        "Loose": 4,
+        "Tight": 0,
+        "Too Loose": 12,
+        "Too Tight": 0
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 40,
+        "Very Good": 20,
+        "Average": 16,
+        "Bad": 6,
+        "Very Bad": 16
+      }
+    }
+  ]
+}

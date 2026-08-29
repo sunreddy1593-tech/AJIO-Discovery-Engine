@@ -1,0 +1,29 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "700399398",
+  "product_title": "Print Tote Bag with Dual Handles",
+  "url": "https://www.ajio.com/p/700399398",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T15:48:59.460Z",
+  "average_rating": null,
+  "rating_count": 32,
+  "rating_distribution": {
+    "1": 25,
+    "2": 0,
+    "3": 3,
+    "4": 18,
+    "5": 53
+  },
+  "opinions": [
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 33,
+        "Very Good": 16,
+        "Average": 16,
+        "Bad": 5,
+        "Very Bad": 27
+      }
+    }
+  ]
+}

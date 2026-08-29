@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "703357337",
+  "product_title": "Women High-Rise Wide Leg Pants",
+  "url": "https://www.ajio.com/p/703357337",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T15:30:34.573Z",
+  "average_rating": null,
+  "rating_count": 629,
+  "rating_distribution": {
+    "1": 34,
+    "2": 12,
+    "3": 12,
+    "4": 16,
+    "5": 24
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 47,
+        "Loose": 14,
+        "Tight": 20,
+        "Too Loose": 7,
+        "Too Tight": 10
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 12,
+        "Very Good": 18,
+        "Average": 25,
+        "Bad": 18,
+        "Very Bad": 25
+      }
+    }
+  ]
+}

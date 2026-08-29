@@ -1,0 +1,166 @@
+# Tier-1 relevance vocabulary (Phase 3, architecture §3 / implementation-plan §3.2.5).
+#
+# One term or phrase per line. Lines starting with '#' and blank lines are ignored.
+# Matching is case-insensitive and word-boundary aware; multi-word phrases match as
+# a contiguous sequence. A document with ZERO hits is dropped before it can reach a
+# paid triage token. The list is deliberately LOOSE — Phase 3's exit audit checks the
+# rejected pool for < 10% false rejections, so over-inclusion here is the safe error.
+
+# --- wishlist / saved-items surface (the North Star signal) ---
+wishlist
+wish list
+wishlisted
+saved item
+saved items
+save for later
+saved for later
+bookmark
+bookmarked
+shortlist
+shortlisted
+add to cart
+added to cart
+in my cart
+in my bag
+my bag
+cart
+
+# --- deliberation / postponement (interest that stalled) ---
+thinking of buying
+planning to buy
+want to buy
+about to buy
+was going to buy
+almost bought
+still deciding
+can't decide
+cant decide
+confused between
+which one
+should i buy
+should i order
+worth buying
+worth it
+waiting for
+waiting to
+postpone
+put off
+holding off
+on hold
+later
+maybe later
+abandoned
+gave up
+
+# --- fit / size uncertainty (the classic pre-purchase blocker) ---
+size
+sizing
+size chart
+sizing chart
+fit
+fitting
+fits
+true to size
+runs small
+runs large
+runs big
+too small
+too tight
+too loose
+too big
+measurement
+measurements
+size up
+size down
+which size
+what size
+# Singular forms, added after "does this run small?" — the question edge-case
+# 1.1.13e names as the richest pre-purchase content on the roster — scored ZERO
+# hits and was dropped by Tier 1. The list had "runs small" but not "run small",
+# so the auxiliary in "does this run small?" put the verb in the bare form and the
+# phrase missed by one character. Matching is word-boundary aware, so "runs small"
+# cannot match "run small": these need stating separately. This was the second
+# barrier in series behind the length gate, and lowering that gate alone would have
+# admitted the question to the corpus only for triage to delete it.
+run small
+run large
+run big
+small size
+large size
+loose fit
+tight fit
+slim fit
+regular fit
+does it fit
+will it fit
+size issue
+size problem
+fit issue
+
+# --- comparison / alternatives ---
+compare
+comparison
+vs
+versus
+better than
+cheaper on
+same product
+alternative
+other options
+myntra
+amazon
+flipkart
+meesho
+nykaa
+
+# --- reviews / social validation sought ---
+review
+reviews
+rating
+ratings
+is it genuine
+is it real
+authentic
+quality check
+worth the price
+honest review
+haul
+tried and tested
+
+# --- price / value uncertainty (kept for discovery; flagged out at scoring by the no-incentives rule) ---
+price
+priced
+expensive
+too costly
+discount
+sale
+offer
+deal
+coupon
+drop in price
+price drop
+wait for sale
+
+# --- availability / stock (Phase 3 rejected-pool audit, 2026-08-28) ---
+# "They are out of stock now" and "Is this still available?" are purchase
+# decisions that scored zero hits because the list had returns and size but
+# not stock. Bare `available` is the safe over-inclusion the vocabulary's
+# header already endorses.
+out of stock
+sold out
+in stock
+still available
+available
+physical store
+offline store
+fabric
+
+# --- returns / exchange friction that deters commitment ---
+return
+returns
+return policy
+exchange
+exchange policy
+refund
+easy return
+return charges

@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "703457518",
+  "product_title": "Women Mid-Rise Lightly Washed Wide Leg Jeans",
+  "url": "https://www.ajio.com/p/703457518",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T15:24:53.752Z",
+  "average_rating": null,
+  "rating_count": 771,
+  "rating_distribution": {
+    "1": 37,
+    "2": 6,
+    "3": 14,
+    "4": 16,
+    "5": 25
+  },
+  "opinions": [
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 16,
+        "Very Good": 25,
+        "Average": 18,
+        "Bad": 14,
+        "Very Bad": 25
+      }
+    },
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 34,
+        "Loose": 13,
+        "Tight": 22,
+        "Too Loose": 7,
+        "Too Tight": 22
+      }
+    }
+  ]
+}

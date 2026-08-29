@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "469675142",
+  "product_title": "Men Slim Fit Shirt with Patch Pocket",
+  "url": "https://www.ajio.com/p/469675142",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T15:55:06.927Z",
+  "average_rating": null,
+  "rating_count": 210,
+  "rating_distribution": {
+    "1": 14,
+    "2": 10,
+    "3": 13,
+    "4": 20,
+    "5": 40
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 68,
+        "Loose": 15,
+        "Tight": 4,
+        "Too Loose": 6,
+        "Too Tight": 4
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 27,
+        "Very Good": 28,
+        "Average": 24,
+        "Bad": 9,
+        "Very Bad": 10
+      }
+    }
+  ]
+}

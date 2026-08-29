@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "702290195",
+  "product_title": "Women Checked Tiered Dress",
+  "url": "https://www.ajio.com/p/702290195",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T14:18:35.636Z",
+  "average_rating": null,
+  "rating_count": 279,
+  "rating_distribution": {
+    "1": 26,
+    "2": 10,
+    "3": 13,
+    "4": 16,
+    "5": 31
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 58,
+        "Loose": 10,
+        "Tight": 26,
+        "Too Loose": 0,
+        "Too Tight": 5
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 23,
+        "Very Good": 21,
+        "Average": 29,
+        "Bad": 8,
+        "Very Bad": 17
+      }
+    }
+  ]
+}

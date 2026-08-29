@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "443099978",
+  "product_title": "Men Light-Wash Skinny Fit Jeans",
+  "url": "https://www.ajio.com/p/443099978",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T16:03:02.169Z",
+  "average_rating": null,
+  "rating_count": null,
+  "rating_distribution": {
+    "1": 17,
+    "2": 7,
+    "3": 13,
+    "4": 21,
+    "5": 39
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 65,
+        "Loose": 8,
+        "Tight": 14,
+        "Too Loose": 4,
+        "Too Tight": 7
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 34,
+        "Very Good": 29,
+        "Average": 19,
+        "Bad": 6,
+        "Very Bad": 10
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "source": "ajio_aggregate",
+  "product_id": "443120429",
+  "product_title": "Men Regular Fit Classic Shirt",
+  "url": "https://www.ajio.com/p/443120429",
+  "extraction": "bookmarklet",
+  "extracted_at": "2026-08-23T15:58:07.449Z",
+  "average_rating": null,
+  "rating_count": 202,
+  "rating_distribution": {
+    "1": 20,
+    "2": 0,
+    "3": 9,
+    "4": 23,
+    "5": 45
+  },
+  "opinions": [
+    {
+      "question": "How was the Product fit?",
+      "options": {
+        "Perfect": 76,
+        "Loose": 14,
+        "Tight": 3,
+        "Too Loose": 1,
+        "Too Tight": 3
+      }
+    },
+    {
+      "question": "How was the Product Quality?",
+      "options": {
+        "Excellent": 39,
+        "Very Good": 37,
+        "Average": 12,
+        "Bad": 3,
+        "Very Bad": 7
+      }
+    }
+  ]
+}
