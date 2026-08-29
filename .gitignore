@@ -13,9 +13,10 @@ data/interim/
 *.db-shm
 logs/
 
-# Processed tables: keep CSVs; ignore anything else in the folder
+# Processed tables: keep CSVs and the Overview snapshot; ignore anything else
 data/processed/*
 !data/processed/*.csv
+!data/processed/*.json
 
 # Reports: keep markdown; ignore csv copies, jsonl audits, scratch scripts
 outputs/*

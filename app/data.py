@@ -27,6 +27,7 @@ from src.store.aggregates import load_ajio_aggregates, summarize
 SCORES_NAME = "opportunity_scores.csv"
 SEGMENTS_NAME = "segment_matrix.csv"
 APPENDIX_NAME = "evidence_appendix.md"
+OVERVIEW_SUMMARY_NAME = "overview_summary.json"
 
 BOOL_COLUMNS = (
     "low_confidence",
@@ -243,6 +244,84 @@ def corpus_facts(db_path: Path) -> dict:
         "analyzable": int(analyzable),
         "tagged": int(tagged),
         "genuine_intent": int(genuine),
+        "available": True,
+    }
+
+
+def build_overview_summary(db_path: Path) -> dict:
+    """Snapshot Overview counts from the tagged corpus. Requires a local DB."""
+    facts = corpus_facts(db_path)
+    if not facts.get("available"):
+        raise FileNotFoundError(f"no corpus at {db_path}")
+    conn = open_corpus_readonly(db_path)
+    if conn is None:
+        raise FileNotFoundError(f"no corpus at {db_path}")
+    intent_class = {
+        "genuine_intent": 0,
+        "bookmark_only": 0,
+        "ambiguous": 0,
+    }
+    sources: dict[str, int] = {}
+    try:
+        rows = conn.execute(
+            """
+            SELECT d.source, t.tags_json
+            FROM documents d
+            JOIN doc_tags t ON t.doc_id = d.doc_id
+            WHERE d.is_relevant = 1 AND d.is_duplicate_of IS NULL
+            """
+        )
+        for source, blob in rows:
+            name = str(source or "unknown")
+            sources[name] = sources.get(name, 0) + 1
+            intent = _payload(blob).get("intent_class") or ""
+            if intent in intent_class:
+                intent_class[intent] += 1
+    finally:
+        conn.close()
+    return {
+        "documents": facts["documents"],
+        "analyzable": facts["analyzable"],
+        "tagged": facts["tagged"],
+        "genuine_intent": facts["genuine_intent"],
+        "intent_class": intent_class,
+        "sources": dict(sorted(sources.items(), key=lambda item: (-item[1], item[0]))),
+        "available": True,
+    }
+
+
+def load_overview_summary(path: Path) -> dict:
+    """Read the committed Overview snapshot. Empty when the file is missing."""
+    if not path.is_file():
+        return {
+            "documents": 0,
+            "analyzable": 0,
+            "tagged": 0,
+            "genuine_intent": 0,
+            "intent_class": {
+                "genuine_intent": 0,
+                "bookmark_only": 0,
+                "ambiguous": 0,
+            },
+            "sources": {},
+            "available": False,
+        }
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(payload, dict):
+        raise ValueError(f"{path} is not a JSON object")
+    intent = payload.get("intent_class") or {}
+    sources = payload.get("sources") or {}
+    return {
+        "documents": int(payload.get("documents") or 0),
+        "analyzable": int(payload.get("analyzable") or 0),
+        "tagged": int(payload.get("tagged") or 0),
+        "genuine_intent": int(payload.get("genuine_intent") or 0),
+        "intent_class": {
+            "genuine_intent": int(intent.get("genuine_intent") or 0),
+            "bookmark_only": int(intent.get("bookmark_only") or 0),
+            "ambiguous": int(intent.get("ambiguous") or 0),
+        },
+        "sources": {str(key): int(value) for key, value in sources.items()},
         "available": True,
     }
 

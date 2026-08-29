@@ -1,0 +1,22 @@
+{
+  "documents": 55913,
+  "analyzable": 7127,
+  "tagged": 800,
+  "genuine_intent": 108,
+  "intent_class": {
+    "genuine_intent": 108,
+    "bookmark_only": 69,
+    "ambiguous": 623
+  },
+  "sources": {
+    "youtube": 420,
+    "consumer_complaints_in": 148,
+    "quora_manual": 107,
+    "play_store": 94,
+    "app_store": 26,
+    "complaints_board": 5
+  },
+  "available": true,
+  "generated_from": "data/interim/discovery.db",
+  "generated_at": "2026-08-29T11:51:57Z"
+}

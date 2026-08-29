@@ -26,14 +26,14 @@ import streamlit as st
 
 from app.data import (
     APPENDIX_NAME,
+    OVERVIEW_SUMMARY_NAME,
     SCORES_NAME,
     SEGMENTS_NAME,
-    corpus_facts,
     default_paths,
     load_evidence_appendix,
     load_opportunity_scores,
+    load_overview_summary,
     load_segment_matrix,
-    load_tagged_documents,
     pretty_label,
     source_display_name,
 )
@@ -492,13 +492,8 @@ def _appendix_cached(path: str):
 
 
 @st.cache_data(show_spinner=False)
-def _docs_cached(path: str) -> pd.DataFrame:
-    return load_tagged_documents(Path(path))
-
-
-@st.cache_data(show_spinner=False)
-def _facts_cached(path: str) -> dict:
-    return corpus_facts(Path(path))
+def _overview_cached(path: str) -> dict:
+    return load_overview_summary(Path(path))
 
 
 def _example(example_id: str) -> dict:
@@ -651,26 +646,22 @@ def render_result_html(result: dict, meta: dict) -> str:
 """
 
 
-def overview_html(*, facts: dict, scores: pd.DataFrame, docs: pd.DataFrame) -> str:
+def overview_html(*, facts: dict, scores: pd.DataFrame) -> str:
     documents = int(facts.get("documents") or 0)
     analyzable = int(facts.get("analyzable") or 0)
     tagged = int(facts.get("tagged") or 0)
     genuine = int(facts.get("genuine_intent") or 0)
 
-    intent_counts = (
-        docs["intent_class"].value_counts().to_dict() if not docs.empty and "intent_class" in docs.columns else {}
-    )
+    intent_counts = facts.get("intent_class") or {}
     bookmark = int(intent_counts.get("bookmark_only") or 0)
     ambiguous = int(intent_counts.get("ambiguous") or 0)
     genuine_from_docs = int(intent_counts.get("genuine_intent") or genuine)
     intent_total = max(genuine_from_docs + bookmark + ambiguous, 1)
 
-    source_counts = (
-        docs["source"].value_counts().head(4) if not docs.empty and "source" in docs.columns else pd.Series(dtype=int)
-    )
-    source_total = int(source_counts.sum()) or 1
+    source_counts = facts.get("sources") or {}
+    source_total = sum(int(count) for count in source_counts.values()) or 1
     source_rows = []
-    for source, count in source_counts.items():
+    for source, count in list(source_counts.items())[:4]:
         pct = 100 * int(count) / source_total
         source_rows.append(
             f'<div style="margin-bottom:12px">'
@@ -1090,16 +1081,16 @@ def main() -> None:
     scores_path = paths.first_existing(SCORES_NAME)
     segments_path = paths.first_existing(SEGMENTS_NAME)
     appendix_path = paths.first_existing(APPENDIX_NAME)
-    facts = _facts_cached(str(paths.interim_db))
-    corpus_ok = bool(facts.get("available"))
+    summary_path = paths.first_existing(OVERVIEW_SUMMARY_NAME)
+    facts = _overview_cached(str(summary_path)) if summary_path is not None else load_overview_summary(Path())
+    corpus_ok = bool(facts.get("available")) or scores_path is not None
 
     _render_sidebar(page=page, corpus_ok=corpus_ok)
 
     scores = _scores_cached(str(scores_path)) if scores_path is not None else pd.DataFrame()
-    docs = _docs_cached(str(paths.interim_db)) if corpus_ok else pd.DataFrame()
 
     if page == "overview":
-        st.markdown(overview_html(facts=facts, scores=scores, docs=docs), unsafe_allow_html=True)
+        st.markdown(overview_html(facts=facts, scores=scores), unsafe_allow_html=True)
         return
 
     if page == "test":
