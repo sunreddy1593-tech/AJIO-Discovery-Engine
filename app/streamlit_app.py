@@ -228,11 +228,39 @@ CHROME_CSS = """
   --sidebar: 260px;
 }
 
-header[data-testid="stHeader"],
 [data-testid="stToolbar"],
 [data-testid="stDecoration"],
 [data-testid="stStatusWidget"],
 #MainMenu, footer, .stDeployButton { display: none !important; }
+
+/* Do not hide stHeader: after collapse, the expand control lives there. */
+header[data-testid="stHeader"] {
+  background: transparent !important;
+  border: none !important;
+}
+
+[data-testid="collapsedControl"],
+[data-testid="stSidebarCollapsedControl"],
+[data-testid="stExpandSidebarButton"] {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: fixed !important;
+  top: 0.85rem !important;
+  left: 0.85rem !important;
+  z-index: 1000000 !important;
+}
+[data-testid="collapsedControl"] button,
+[data-testid="stSidebarCollapsedControl"] button,
+[data-testid="stExpandSidebarButton"] {
+  background: #fff8f6 !important;
+  color: #730000 !important;
+  border: 1px solid #e4beb8 !important;
+  border-radius: 8px !important;
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06) !important;
+}
 
 .stApp, [data-testid="stAppViewContainer"], [data-testid="stAppViewContainer"] > .main {
   background: var(--bg) !important;
