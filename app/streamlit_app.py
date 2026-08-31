@@ -23,6 +23,7 @@ if str(ROOT) not in sys.path:
 
 import pandas as pd
 import streamlit as st
+import streamlit.components.v1 as components
 
 from app.data import (
     APPENDIX_NAME,
@@ -228,31 +229,30 @@ CHROME_CSS = """
   --sidebar: 260px;
 }
 
-[data-testid="stToolbar"],
 [data-testid="stDecoration"],
 [data-testid="stStatusWidget"],
-#MainMenu, footer, .stDeployButton { display: none !important; }
+#MainMenu, footer, .stDeployButton,
+.stAppDeployButton { display: none !important; }
 
-/* Do not hide stHeader: after collapse, the expand control lives there. */
+/* stExpandSidebarButton is a child of stToolbar. Hiding the toolbar
+   (display:none) also hides the expand control — do not hide stToolbar. */
 header[data-testid="stHeader"] {
   background: transparent !important;
   border: none !important;
 }
+[data-testid="stToolbar"] {
+  background: transparent !important;
+  border: none !important;
+}
+header[data-testid="stHeader"]:has([data-testid="stExpandSidebarButton"]) {
+  min-height: 3.5rem !important;
+}
 
-[data-testid="collapsedControl"],
-[data-testid="stSidebarCollapsedControl"],
 [data-testid="stExpandSidebarButton"] {
-  display: flex !important;
+  display: inline-flex !important;
   visibility: visible !important;
   opacity: 1 !important;
-  position: fixed !important;
-  top: 0.85rem !important;
-  left: 0.85rem !important;
   z-index: 1000000 !important;
-}
-[data-testid="collapsedControl"] button,
-[data-testid="stSidebarCollapsedControl"] button,
-[data-testid="stExpandSidebarButton"] {
   background: #fff8f6 !important;
   color: #730000 !important;
   border: 1px solid #e4beb8 !important;
@@ -270,6 +270,10 @@ header[data-testid="stHeader"] {
   padding-top: 1.25rem !important;
   padding-bottom: 3rem !important;
   max-width: 1440px !important;
+}
+iframe[height="0"] {
+  display: none !important;
+  height: 0 !important;
 }
 [data-testid="stSidebar"] {
   background: #fff8f6 !important;
@@ -393,6 +397,84 @@ header[data-testid="stHeader"] {
 }
 </style>
 """
+
+_OPEN_NAV_HTML = """
+<script>
+(function () {
+  const doc = window.parent.document;
+  function sidebarCollapsed() {
+    const sb = doc.querySelector('[data-testid="stSidebar"]');
+    if (!sb) return false;
+    if (sb.getAttribute("aria-expanded") === "false") return true;
+    return sb.getBoundingClientRect().width < 48;
+  }
+  function nativeExpand() {
+    return doc.querySelector('[data-testid="stExpandSidebarButton"]');
+  }
+  function tick() {
+    const collapsed = sidebarCollapsed();
+    const native = nativeExpand();
+    if (native) {
+      native.style.setProperty("display", "inline-flex", "important");
+      native.style.setProperty("visibility", "visible", "important");
+      native.style.setProperty("opacity", "1", "important");
+      const toolbar = native.closest('[data-testid="stToolbar"]');
+      if (toolbar) {
+        toolbar.style.setProperty("display", "flex", "important");
+        toolbar.style.setProperty("visibility", "visible", "important");
+      }
+      const header = native.closest('[data-testid="stHeader"]');
+      if (header) {
+        header.style.setProperty("display", "flex", "important");
+        header.style.setProperty("visibility", "visible", "important");
+      }
+    }
+    let fab = doc.getElementById("ad-open-nav");
+    const nativeVisible = !!(native && native.getBoundingClientRect().width > 0);
+    if (!collapsed || nativeVisible) {
+      if (fab) fab.style.display = "none";
+      return;
+    }
+    if (!fab) {
+      fab = doc.createElement("button");
+      fab.id = "ad-open-nav";
+      fab.type = "button";
+      fab.setAttribute("aria-label", "Open navigation");
+      fab.textContent = "\\u2630";
+      Object.assign(fab.style, {
+        position: "fixed",
+        top: "12px",
+        left: "12px",
+        zIndex: "2147483647",
+        width: "40px",
+        height: "40px",
+        borderRadius: "8px",
+        border: "1px solid #e4beb8",
+        background: "#fff8f6",
+        color: "#730000",
+        fontSize: "20px",
+        cursor: "pointer",
+        boxShadow: "0 2px 10px rgba(0,0,0,0.08)",
+      });
+      fab.onclick = function () {
+        const b = nativeExpand();
+        if (b) b.click();
+      };
+      doc.body.appendChild(fab);
+    }
+    fab.style.display = "flex";
+    fab.style.alignItems = "center";
+    fab.style.justifyContent = "center";
+  }
+  setInterval(tick, 250);
+})();
+</script>
+"""
+
+
+def _keep_sidebar_expandable() -> None:
+    """Toolbar hosts Streamlit's expand control; this restores it if CSS hid a parent."""
+    components.html(_OPEN_NAV_HTML, height=0, width=0)
 
 
 def groq_key_from_secrets() -> str | None:
@@ -1097,6 +1179,7 @@ def main() -> None:
         initial_sidebar_state="expanded",
     )
     st.markdown(CHROME_CSS, unsafe_allow_html=True)
+    _keep_sidebar_expandable()
 
     if "live_text" not in st.session_state:
         st.session_state["live_text"] = ""

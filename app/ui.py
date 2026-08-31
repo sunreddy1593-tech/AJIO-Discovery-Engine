@@ -51,25 +51,27 @@ CHROME_CSS = """
   --top: 64px;
 }
 
-[data-testid="stToolbar"],
 [data-testid="stDecoration"],
 [data-testid="stStatusWidget"],
-#MainMenu, footer, .stDeployButton { display: none !important; }
+#MainMenu, footer, .stDeployButton,
+.stAppDeployButton { display: none !important; }
 
 header[data-testid="stHeader"] {
   background: transparent !important;
   border: none !important;
 }
+[data-testid="stToolbar"] {
+  background: transparent !important;
+  border: none !important;
+}
+header[data-testid="stHeader"]:has([data-testid="stExpandSidebarButton"]) {
+  min-height: 3.5rem !important;
+}
 
-[data-testid="collapsedControl"],
-[data-testid="stSidebarCollapsedControl"],
 [data-testid="stExpandSidebarButton"] {
-  display: flex !important;
+  display: inline-flex !important;
   visibility: visible !important;
   opacity: 1 !important;
-  position: fixed !important;
-  top: 0.85rem !important;
-  left: 0.85rem !important;
   z-index: 1000000 !important;
 }
 
